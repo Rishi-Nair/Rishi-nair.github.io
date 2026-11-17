@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rishi Nair · Marketing Professional</title>
+<meta name="description" content="Rishi Nair, marketing analyst in London. Campaign measurement and brand communications across 11 retail brands at Titan Company; MSc Marketing, University of Birmingham.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: open, friendly single column; soft tinted bands, rounded cards, one blue accent with a warm highlight. */
+:root {
+  --bg: #ffffff;
+  --soft: #f3f6fb;
+  --card: #ffffff;
+  --ink: #1c2230;
+  --muted: #5d6678;
+  --line: #e3e7ef;
+  --accent: #2f55d4;
+  --accent-ink: #ffffff;
+  --accent-soft: #e9eefc;
+  --warm: #c77700;
+  --warm-soft: #fdf1dc;
+  --shadow: 0 1px 2px rgba(28,34,48,.05), 0 8px 24px rgba(28,34,48,.06);
+  --f: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11141b; --soft: #171b24; --card: #1c212c; --ink: #e9ecf2; --muted: #a2aaba; --line: #2a303d;
+    --accent: #8aa4ff; --accent-ink: #11141b; --accent-soft: #212a47; --warm: #f2b85a; --warm-soft: #33291a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11141b; --soft: #171b24; --card: #1c212c; --ink: #e9ecf2; --muted: #a2aaba; --line: #2a303d;
+  --accent: #8aa4ff; --accent-ink: #11141b; --accent-soft: #212a47; --warm: #f2b85a; --warm-soft: #33291a;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.65 var(--f); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+h1, h2, h3, h4 { text-wrap: balance; margin: 0; line-height: 1.2; letter-spacing: -.01em; }
+p { margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.brand .mini { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 700; }
+.nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; font-size: 14px; font-weight: 500; }
+.nav ul a { color: var(--muted); text-decoration: none; }
+.nav ul a:hover { color: var(--ink); }
+@media (max-width: 760px) { .nav ul { display: none; } }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font: 600 15px var(--f); text-decoration: none; border: 1.5px solid var(--accent); transition: transform .15s ease; }
+.btn:hover { transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { background: transparent; color: var(--accent); }
+
+/* Hero */
+.hero { padding: 64px 0 56px; display: grid; grid-template-columns: 1.45fr 1fr; gap: 48px; align-items: center; }
+.hello { display: inline-block; background: var(--warm-soft); color: var(--warm); font-weight: 600; font-size: 14px; padding: 6px 14px; border-radius: 999px; }
+.hero h1 { font-size: clamp(34px, 5.4vw, 54px); font-weight: 800; margin: 18px 0 18px; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 18px; color: var(--muted); max-width: 56ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+.profile { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); }
+.avatar { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--warm))); color: #fff; font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+.profile .who { font-weight: 700; font-size: 18px; }
+.profile .role { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+.facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.facts li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; font-size: 14px; color: var(--muted); }
+.facts li b { display: block; color: var(--ink); font-weight: 600; font-size: 14px; }
+.ico { width: 28px; height: 28px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+.ico svg { width: 15px; height: 15px; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 32px; } }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-bottom: 64px; }
+.stat { background: var(--soft); border-radius: 16px; padding: 22px; }
+.stat .num { font-size: 30px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.stat .lbl { font-size: 14px; color: var(--muted); }
+@media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } }
+
+/* Sections */
+section { padding: 72px 0; }
+section.tint { background: var(--soft); }
+.sec-title { margin-bottom: 36px; max-width: 64ch; }
+.kicker { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--warm); }
+.sec-title h2 { font-size: clamp(26px, 3.4vw, 34px); font-weight: 800; margin: 8px 0 10px; }
+.sec-title p { color: var(--muted); font-size: 17px; }
+
+/* Journey timeline */
+.journey { list-style: none; margin: 0; padding: 0; position: relative; display: grid; gap: 16px; }
+.journey::before { content: ""; position: absolute; left: 87px; top: 10px; bottom: 10px; width: 2px; background: var(--line); }
+.stop { display: grid; grid-template-columns: 70px 36px 1fr; gap: 0 12px; align-items: start; position: relative; }
+.stop .yr { font-weight: 700; font-size: 14px; color: var(--muted); text-align: right; padding-top: 18px; font-variant-numeric: tabular-nums; }
+.stop .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--card); border: 3px solid var(--accent); margin: 21px auto 0; position: relative; z-index: 1; }
+.stop .body { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; box-shadow: var(--shadow); }
+.stop h3 { font-size: 16px; font-weight: 700; }
+.stop .place { font-size: 13px; color: var(--muted); font-weight: 500; }
+.stop p { font-size: 15px; color: var(--muted); margin-top: 6px; max-width: 70ch; }
+.stop.next .dot { border-color: var(--warm); background: var(--warm); }
+.stop.next .body { background: var(--warm-soft); border-color: transparent; box-shadow: none; }
+.stop.next h3 { color: var(--warm); }
+@media (max-width: 600px) {
+  .journey::before { left: 7px; }
+  .stop { grid-template-columns: 16px 1fr; gap: 6px 14px; }
+  .stop .yr { grid-column: 2; grid-row: 1; text-align: left; padding-top: 0; }
+  .stop .dot { grid-column: 1; grid-row: 1 / span 2; margin: 4px 0 0; }
+  .stop .body { grid-column: 2; grid-row: 2; }
+}
+
+/* Experience */
+.job { margin-bottom: 48px; }
+.job:last-child { margin-bottom: 0; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; margin-bottom: 18px; }
+.job-head h3 { font-size: 21px; font-weight: 700; }
+.job-head .org { color: var(--muted); font-size: 15px; }
+.chip-date { font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 12px; border-radius: 999px; white-space: nowrap; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; box-shadow: var(--shadow); display: grid; gap: 10px; align-content: start; }
+.card h4 { font-size: 17px; font-weight: 700; }
+.card .row { font-size: 15px; color: var(--muted); }
+.card .row b { color: var(--ink); font-weight: 600; }
+.card .out { margin-top: 4px; font-size: 15px; background: var(--accent-soft); color: var(--ink); border-radius: 10px; padding: 10px 12px; }
+.note { font-size: 14px; color: var(--muted); margin-top: 16px; }
+.plain { color: var(--muted); max-width: 70ch; }
+
+/* What I bring */
+.bring { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.bring .card { box-shadow: none; }
+.bring .num { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--warm-soft); color: var(--warm); font-weight: 800; }
+@media (max-width: 900px) { .bring { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .bring { grid-template-columns: 1fr; } }
+
+/* Titan duties + extra badge */
+.duties { margin-top: 16px; box-shadow: none; background: var(--soft); border-color: transparent; }
+.duties ul { margin: 4px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+.duties li { position: relative; padding-left: 20px; font-size: 15px; color: var(--muted); }
+.duties li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+@media (max-width: 760px) { .duties ul { grid-template-columns: 1fr; } }
+.badge { justify-self: start; font-size: 12px; font-weight: 700; color: var(--warm); background: var(--warm-soft); padding: 3px 10px; border-radius: 999px; }
+.card.extra { border-style: dashed; }
+
+/* Beyond work */
+.interests { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.interests .card { box-shadow: none; }
+.emoji { font-size: 28px; line-height: 1; }
+@media (max-width: 1000px) { .interests { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .interests { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .interests { grid-template-columns: 1fr; } }
+
+/* Skills */
+.skillgroups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.skillgroups .card h4 { font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; padding: 6px 12px; border-radius: 999px; background: var(--soft); border: 1px solid var(--line); }
+@media (max-width: 860px) { .skillgroups { grid-template-columns: 1fr; } }
+
+/* Education */
+.edu { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.edu .card .meta { font-size: 14px; color: var(--muted); }
+.certs { margin-top: 16px; }
+.certs ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+.certs li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.certs li span:last-child { color: var(--muted); font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.certs li small { display: block; color: var(--muted); font-size: 13px; }
+@media (max-width: 760px) { .edu, .certs ul { grid-template-columns: 1fr; } }
+
+/* Projects (hidden until PROJECTS has entries) */
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.projects .links { display: flex; gap: 14px; flex-wrap: wrap; font-weight: 600; font-size: 14px; }
+
+/* Contact */
+.cta { background: var(--accent); color: var(--accent-ink); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }
+.cta h2 { font-size: clamp(26px, 3.4vw, 34px); font-weight: 800; }
+.cta p { opacity: .9; margin-top: 10px; max-width: 52ch; }
+.cta .lines { display: grid; gap: 12px; font-size: 15px; }
+.cta .lines a { color: var(--accent-ink); font-weight: 600; word-break: break-word; }
+.cta .lines small { display: block; opacity: .75; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+@media (max-width: 760px) { .cta { grid-template-columns: 1fr; padding: 32px 24px; } }
+footer { padding: 28px 0 48px; color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mini">RN</span>Rishi Nair</a>
+    <ul>
+      <li><a href="#journey">My journey</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#about-me">About me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <span class="hello">Hi, I'm Rishi 👋</span>
+        <h1>Marketing <span>professional</span></h1>
+        <p class="lede">I spent two years measuring campaigns and looking after brand communications for 11 retail brands at Titan Company in India. Since then I've completed an MSc in Marketing at the University of Birmingham, and I'm now looking for my next marketing analytics role in the UK. When I'm not working, I'm probably on a tennis court, planning my next trip or trying a new place to eat.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:rishinair13@gmail.com">Get in touch</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/rishirajeshnair" rel="noopener">View LinkedIn</a>
+          <!-- On GitHub Pages: upload your CV as cv.pdf next to this file, then remove the comment marks around the next line -->
+          <!-- <a class="btn ghost" href="cv.pdf">Download CV</a> -->
+        </div>
+      </div>
+
+      <aside class="profile" aria-label="Application details">
+        <!-- To use a photo instead: replace the next div with <img class="avatar" src="photo.jpg" alt="Rishi Nair"> and add object-fit: cover -->
+        <div class="avatar" aria-hidden="true">RN</div>
+        <div class="who">Rishi Nair</div>
+        <div class="role">Marketing professional</div>
+        <ul class="facts">
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>London, UK</b>Open to London-based or remote UK roles</div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>Phone</b><a href="tel:+447342158318">+44 7342 158318</a></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Right to work in the UK</b>Graduate visa valid to December 2027, no sponsorship needed</div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><div><b>Looking for</b>Marketing analyst, insight, CRM and digital marketing roles</div></li>
+        </ul>
+      </aside>
+    </header>
+
+    <div class="stats" aria-label="Highlights">
+      <div class="stat"><div class="num">11</div><div class="lbl">retail brands supported at Titan Company</div></div>
+      <div class="stat"><div class="num">&lt;1 day</div><div class="lbl">reporting turnaround, down from several days</div></div>
+      <div class="stat"><div class="num">10,000+</div><div class="lbl">daily customer interactions kept on-brand at peak</div></div>
+      <div class="stat"><div class="num">2 countries</div><div class="lbl">worked and studied in India and the UK</div></div>
+    </div>
+  </div>
+
+  <!-- JOURNEY -->
+  <section id="journey" class="tint">
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">My journey</span>
+        <h2>From computer science to marketing, from Bangalore to London</h2>
+        <p>Each step added something different: a technical foundation, product thinking, brand work at scale, and marketing strategy.</p>
+      </div>
+      <ol class="journey">
+        <li class="stop"><span class="yr">2018</span><span class="dot"></span><div class="body"><h3>BTech in Computer Science</h3><div class="place">Christ University, Bangalore</div><p>Learned how to work with data, structure problems and think in systems.</p></div></li>
+        <li class="stop"><span class="yr">2021</span><span class="dot"></span><div class="body"><h3>First product role at a start-up</h3><div class="place">Ekah Truck, Bangalore</div><p>Worked between users and engineers at an early-stage logistics platform, fixing where new users dropped off.</p></div></li>
+        <li class="stop"><span class="yr">2022</span><span class="dot"></span><div class="body"><h3>Marketing analytics at Titan Company</h3><div class="place">Titan Company Ltd, Bangalore · owner of Tanishq and Zoya</div><p>Two years measuring campaigns and managing communications across 11 brands, from everyday lifestyle labels to fine jewellery.</p></div></li>
+        <li class="stop"><span class="yr">2024</span><span class="dot"></span><div class="body"><h3>MSc in Marketing</h3><div class="place">University of Birmingham, UK</div><p>Studied marketing strategy, international marketing, consumer analysis and marketing budgeting.</p></div></li>
+        <li class="stop"><span class="yr">2026</span><span class="dot"></span><div class="body"><h3>Settled in London</h3><div class="place">Sainsbury's, part-time</div><p>Working in a fast-paced, target-driven retail operation while I look for my next marketing role.</p></div></li>
+        <li class="stop next"><span class="yr">Next</span><span class="dot"></span><div class="body"><h3>A marketing analytics role in the UK</h3><p>Bringing data, brand and international experience to a UK marketing team.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">Experience</span>
+        <h2>What I've worked on</h2>
+        <p>Some highlights from each role, with the challenge, what I did and how it turned out.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><h3>Marketing Analytics &amp; Campaign Executive</h3><div class="org">Titan Company Ltd · Bangalore, India</div></div>
+          <span class="chip-date">2022 – 2024</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h4>One measurement view for 11 brands</h4>
+            <p class="row"><b>Challenge:</b> brand teams each requested their own reports, so performance figures took days to arrive and were hard to compare.</p>
+            <p class="row"><b>What I did:</b> built self-serve dashboards in Salesforce Marketing Cloud covering engagement, content ROI and SLA performance.</p>
+            <p class="out">Reporting turnaround fell from several days to under one day.</p>
+          </article>
+          <article class="card">
+            <h4>Finding which campaigns paid back</h4>
+            <p class="row"><b>Challenge:</b> budget was spread across email, social, web and in-store with little evidence of what earned its spend.</p>
+            <p class="row"><b>What I did:</b> measured campaign performance by audience segment and objective, comparing formats and brand voices against spend.</p>
+            <p class="out">Clear read-outs that helped shift budget and effort towards what converted.</p>
+          </article>
+          <article class="card">
+            <h4>Decisions based on customer behaviour</h4>
+            <p class="row"><b>Challenge:</b> campaign planning leaned on instinct.</p>
+            <p class="row"><b>What I did:</b> designed tests and analysed drop-off points, recurring query themes and peak-hour patterns, alongside competitor research.</p>
+            <p class="out">Campaign decisions moved from assumption-led to evidence-led.</p>
+          </article>
+          <article class="card">
+            <h4>Peak season across 11 brand voices</h4>
+            <p class="row"><b>Challenge:</b> Diwali and Akshaya Tritiya drive most Indian jewellery sales, and every brand launches at once.</p>
+            <p class="row"><b>What I did:</b> owned tone of voice and content calendars for all 11 brands, managing approvals through Jira.</p>
+            <p class="out">Quality held across 10,000+ daily customer interactions at peak.</p>
+          </article>
+          <article class="card">
+            <h4>An early move into AI customer service</h4>
+            <p class="row"><b>Challenge:</b> a GPT-based customer communications platform had to launch safely, about a year ahead of wider industry adoption.</p>
+            <p class="row"><b>What I did:</b> wrote tone guidelines for AI replies, ran user acceptance testing and documented escalation rules.</p>
+            <p class="out">The platform went live with on-brand replies and clear hand-offs to people.</p>
+          </article>
+          <article class="card">
+            <h4>Working with every team</h4>
+            <p class="row"><b>Challenge:</b> data only helps if non-analysts can act on it.</p>
+            <p class="row"><b>What I did:</b> partnered with marketing, sales and client-facing teams, turning campaign and customer data into plain recommendations.</p>
+            <p class="out">Read-outs that people outside analytics used to make decisions.</p>
+          </article>
+        </div>
+        <div class="duties card">
+          <h4>Day to day, I was also responsible for</h4>
+          <ul>
+            <li>Producing weekly and monthly performance read-outs for brand managers and leadership</li>
+            <li>Agreeing KPIs and reporting formats with each brand team, so results were measured the same way across all 11 brands</li>
+            <li>Running post-campaign reviews after major launches to capture what to repeat and what to drop</li>
+            <li>Tracking competitor campaigns and offers, especially in the run-up to festive seasons</li>
+            <li>Coordinating content calendars and approvals with creative, sales and client-facing teams during simultaneous launches</li>
+            <li>Monitoring SLA performance for customer communications and flagging issues before they reached customers</li>
+            <li>Showing colleagues how to use the self-serve dashboards so they could find answers without waiting for a report</li>
+            <li>Writing and maintaining tone of voice guidelines for each brand</li>
+          </ul>
+        </div>
+        <p class="note">Titan's figures and dashboards are confidential, so these summaries describe the work rather than show internal data.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><h3>UI/UX &amp; Content Support</h3><div class="org">Ekah Truck · Bangalore, India</div></div>
+          <span class="chip-date">2021</span>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h4>Fixing onboarding drop-off</h4>
+            <p class="row"><b>Challenge:</b> new fleet operators dropped out during onboarding and kept raising the same questions.</p>
+            <p class="row"><b>What I did:</b> analysed where users dropped off and rewrote onboarding flows and in-app copy to answer questions before they were asked.</p>
+            <p class="out">Fewer recurring support queries.</p>
+          </article>
+          <article class="card">
+            <h4>Turning feedback into fixes</h4>
+            <p class="row"><b>Challenge:</b> operator feedback wasn't reaching the engineering team in a usable form.</p>
+            <p class="row"><b>What I did:</b> ran structured feedback sessions, turned findings into prioritised tickets and tested fixes before release. I also produced onboarding decks and partner one-pagers.</p>
+            <p class="out">New operators went from signed contract to live use in days, not weeks.</p>
+          </article>
+          <article class="card extra">
+            <span class="badge">Extra work</span>
+            <h4>Application architecture</h4>
+            <p class="row"><b>Challenge:</b> as an early-stage start-up, the platform's structure was still taking shape while new features were being added.</p>
+            <p class="row"><b>What I did:</b> alongside my main role, I worked with the engineering team on the app's architecture, using my computer science background to map user journeys to screens and system components and to plan how new features would fit.</p>
+            <p class="out">Product changes were planned with both the user and the system in mind.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><h3>Online Assistant, Groceries Online</h3><div class="org">Sainsbury's · London · part-time</div></div>
+          <span class="chip-date">2026 – present</span>
+        </div>
+        <p class="plain" style="margin-bottom:18px">I pick and prepare online grocery orders in a busy London store. It's fast, target-driven work, and it gives me a close-up view of how ecommerce works for a major UK retailer.</p>
+        <div class="cards" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr))">
+          <article class="card">
+            <h4>Working to targets</h4>
+            <p class="row">Every shift is measured on per-order time, pick rate and accuracy. I consistently meet Sainsbury's performance benchmarks, including at the busiest times of the week.</p>
+          </article>
+          <article class="card">
+            <h4>Thinking about the customer</h4>
+            <p class="row">When an item is out of stock, I choose the best substitute in real time, balancing what's on the shelf against what the customer is likely to want.</p>
+          </article>
+          <article class="card">
+            <h4>Live systems</h4>
+            <p class="row">I use Sainsbury's handheld systems for live order, stock and dispatch management, keeping accuracy high across high-volume shifts.</p>
+          </article>
+          <article class="card">
+            <h4>What it's taught me</h4>
+            <p class="row">Product availability, substitutions and delivery all shape how customers feel about a brand. Seeing UK grocery ecommerce from the inside helps me understand the operations behind customer data.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I BRING -->
+  <section class="tint" aria-labelledby="bring-title">
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">What I bring</span>
+        <h2 id="bring-title">Why I'd be a good addition to your team</h2>
+      </div>
+      <div class="bring">
+        <div class="card"><span class="num">1</span><h4>Data and brand together</h4><p class="row">I've measured campaigns and also written for them, so I understand both the numbers and the creative work behind them.</p></div>
+        <div class="card"><span class="num">2</span><h4>Experience at scale</h4><p class="row">I've worked on 11 brands at once, through the busiest trading weeks of the year.</p></div>
+        <div class="card"><span class="num">3</span><h4>A technical foundation</h4><p class="row">My computer science degree means I'm comfortable with data, systems and learning new tools quickly.</p></div>
+        <div class="card"><span class="num">4</span><h4>An international view</h4><p class="row">I've worked with customers in India and studied marketing in the UK.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">Skills</span>
+        <h2>What I'm good at</h2>
+      </div>
+      <div class="skillgroups">
+        <div class="card"><h4>Measurement &amp; insight</h4><div class="chips"><span class="chip">Campaign performance measurement</span><span class="chip">Channel &amp; segment read-outs</span><span class="chip">Content ROI analysis</span><span class="chip">Drop-off analysis</span><span class="chip">Competitor research</span><span class="chip">Stakeholder reporting</span></div></div>
+        <div class="card"><h4>Campaigns &amp; content</h4><div class="chips"><span class="chip">Multi-channel campaigns</span><span class="chip">Tone of voice</span><span class="chip">Content calendars</span><span class="chip">Customer communications</span><span class="chip">User acceptance testing</span><span class="chip">Onboarding copy</span></div></div>
+        <div class="card"><h4>People skills</h4><div class="chips"><span class="chip">Clear communicator</span><span class="chip">Good listener</span><span class="chip">Easy to work with</span><span class="chip">Calm under pressure</span><span class="chip">Adaptable</span><span class="chip">Curious</span><span class="chip">Confident presenter</span></div></div>
+        <div class="card"><h4>Tools</h4><div class="chips"><span class="chip">Salesforce Marketing Cloud</span><span class="chip">Excel</span><span class="chip">PowerPoint</span><span class="chip">Jira</span><span class="chip">ServiceNow</span><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">Canva</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND WORK -->
+  <section id="about-me" class="tint">
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">Beyond work</span>
+        <h2>A bit more about me</h2>
+        <p>I'm a people person. I like meeting new people, hearing their stories and getting a good conversation going. Here's what I get up to when I'm not working.</p>
+      </div>
+      <div class="interests">
+        <div class="card"><span class="emoji" aria-hidden="true">✈️</span><h4>Travelling</h4><p class="row">I love exploring new places. Living in India and the UK has made me curious about how people live, shop and spend their time in different parts of the world.</p></div>
+        <div class="card"><span class="emoji" aria-hidden="true">🍜</span><h4>Finding new places to eat</h4><p class="row">I'm always looking for the next great meal, from street food stalls to hidden local spots. London makes this easy.</p></div>
+        <div class="card"><span class="emoji" aria-hidden="true">💬</span><h4>Meeting new people</h4><p class="row">I'm socially active and enjoy talking with people from all walks of life. Some of my best ideas have come from a good conversation.</p></div>
+        <div class="card"><span class="emoji" aria-hidden="true">🎾</span><h4>Tennis</h4><p class="row">My favourite way to switch off. It's good for focus, and I enjoy the competition.</p></div>
+        <div class="card"><span class="emoji" aria-hidden="true">🎭</span><h4>Theatre</h4><p class="row">I used to act in theatre productions. It gave me confidence speaking in front of an audience, which helps whenever I present to a room.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS: hidden until the PROJECTS list in the script has entries -->
+  <section id="projects" class="tint" hidden>
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">Projects</span>
+        <h2>Recent projects</h2>
+        <p>Work on real or public marketing data. Click through to see the dashboards and code.</p>
+      </div>
+      <div class="projects" id="project-list"></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">Education</span>
+        <h2>Education &amp; certifications</h2>
+      </div>
+      <div class="edu">
+        <div class="card"><span class="chip-date" style="justify-self:start">2024</span><h4>MSc Marketing</h4><p class="meta">University of Birmingham, UK</p><p class="row">Marketing Strategy · International Marketing · Consumer Analysis · Marketing Psychology · Campaign and Advertising · Marketing Budgeting</p></div>
+        <div class="card"><span class="chip-date" style="justify-self:start">2018</span><h4>BTech Computer Science</h4><p class="meta">Christ University, Bangalore, India</p><p class="row">Data fundamentals · Data structures and algorithms · Problem solving and systems thinking</p></div>
+      </div>
+      <div class="certs card">
+        <h4>Certifications</h4>
+        <ul>
+          <li><span>Growth Marketing &amp; AI<small>IBM</small></span><span>2026</span></li>
+          <li><span>Generative AI &amp; Prompt Engineering<small>IBM</small></span><span>2026</span></li>
+          <li><span>AI-driven Growth Marketing Strategy<small>Starweaver</small></span><span>2026</span></li>
+          <li><span>Professional Skills for the Workplace<small>UC Davis</small></span><span>2025</span></li>
+          <li><span>Business &amp; Marketing Strategies Specialisation<small>University of London</small></span><span>2024</span></li>
+          <li><span>Fundamentals of Digital Marketing<small>Google Digital Garage</small></span><span>2023</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-top:24px">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Let's talk</h2>
+          <p>If you're hiring for marketing analytics, insight, CRM or digital marketing, I'd love to hear from you. I'm happy to talk through any of the work on this page.</p>
+        </div>
+        <div class="lines">
+          <div><small>Email</small><a href="mailto:rishinair13@gmail.com">rishinair13@gmail.com</a></div>
+          <div><small>LinkedIn</small><a href="https://www.linkedin.com/in/rishirajeshnair" rel="noopener">linkedin.com/in/rishirajeshnair</a></div>
+          <div><small>Phone</small><a href="tel:+447342158318">+44 7342 158318</a></div>
+          <div><small>Location</small>London, UK</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Rishi Nair · Last updated November 2026</div></footer>
+
+<script>
+/* ==========================================================
+   PROJECTS: leave empty to keep the section hidden.
+   To add one later, copy this shape:
+   { title: "Where is the funnel leaking?",
+     summary: "One or two sentences on the question and what you found.",
+     tools: "GA4 · BigQuery · Looker Studio",
+     links: [ { label: "Dashboard", url: "https://..." },
+              { label: "Code", url: "https://github.com/..." } ] }
+   ========================================================== */
+const PROJECTS = [];
+
+if (PROJECTS.length) {
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  document.getElementById("project-list").innerHTML = PROJECTS.map(p => `
+    <article class="card">
+      <h4>${esc(p.title)}</h4>
+      <p class="row">${esc(p.summary)}</p>
+      <p class="row"><b>Tools:</b> ${esc(p.tools || "")}</p>
+      <div class="links">${(p.links || []).map(l => `<a href="${esc(l.url)}" rel="noopener">${esc(l.label)} →</a>`).join("")}</div>
+    </article>`).join("");
+  document.getElementById("projects").hidden = false;
+  const nav = document.querySelector(".nav ul");
+  const li = document.createElement("li");
+  li.innerHTML = '<a href="#projects">Projects</a>';
+  nav.insertBefore(li, nav.children[2]);
+}
+</script>
+</body>
+</html>
